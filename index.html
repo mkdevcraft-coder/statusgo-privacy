@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>StatusGo · Privacy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f4f8;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding-bottom: 40px;
+    }
+
+    /* header – StatusGo brand */
+    .app-header {
+      background: linear-gradient(145deg, #1e8b5e, #0f6b47);
+      color: white;
+      padding: 36px 20px 28px;
+      text-align: center;
+      border-bottom: 4px solid #25D366;
+      box-shadow: 0 6px 18px rgba(0, 40, 20, 0.15);
+    }
+
+    .app-header h1 {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .app-header h1 span {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0 12px;
+      border-radius: 40px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .app-header .sub {
+      opacity: 0.9;
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 4px;
+    }
+
+    .app-header .date {
+      display: inline-block;
+      margin-top: 8px;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 4px 18px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 400;
+      backdrop-filter: blur(2px);
+    }
+
+    /* card container */
+    .container {
+      max-width: 920px;
+      margin: -30px auto 30px;
+      padding: 0 16px;
+    }
+
+    .policy-card {
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 16px 40px -12px rgba(0, 30, 20, 0.18);
+      padding: 32px 30px;
+      transition: all 0.1s ease;
+    }
+
+    .highlight-box {
+      background: #edfaf3;
+      border-left: 6px solid #25D366;
+      padding: 18px 22px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+      font-weight: 450;
+      color: #124b36;
+    }
+
+    h2 {
+      color: #0c6b4b;
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+      border-bottom: 2px solid #e3f0e9;
+      padding-bottom: 8px;
+    }
+
+    h2:first-of-type {
+      margin-top: 6px;
+    }
+
+    ul, .list {
+      margin-left: 22px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    .badge-list {
+      list-style: none;
+      margin-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      padding: 4px 0 8px;
+    }
+
+    .badge-list li {
+      background: #f0f6f3;
+      padding: 6px 18px 6px 14px;
+      border-radius: 40px;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-list li::before {
+      content: "✓";
+      color: #1e8b5e;
+      font-weight: 700;
+      margin-right: 2px;
+    }
+
+    .storage-update {
+      background: #f2fbf7;
+      border-radius: 18px;
+      padding: 18px 24px;
+      margin: 22px 0 12px;
+      border: 1px solid #b8dfcd;
+    }
+
+    .storage-update strong {
+      color: #0e6b45;
+    }
+
+    .divider {
+      margin: 38px 0 28px;
+      border: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #d0e6db, #a8cfbb, #d0e6db);
+    }
+
+    .contact-block {
+      background: #f8fbfa;
+      padding: 18px 22px;
+      border-radius: 20px;
+      margin: 16px 0 10px;
+    }
+
+    .contact-block p {
+      margin: 6px 0;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 24px 10px 6px;
+      color: #6c7a7a;
+      font-size: 14px;
+      border-top: 1px solid #e5eee9;
+      margin-top: 20px;
+    }
+
+    .footer-note a {
+      color: #0f6b47;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    .disclaimer-box {
+      background: #fcf7f0;
+      border-radius: 18px;
+      padding: 18px 22px;
+      margin: 28px 0 10px;
+      border-left: 5px solid #f5b342;
+      font-size: 14px;
+      color: #3d403a;
+    }
+
+    .disclaimer-box strong {
+      color: #9e6d2b;
+    }
+
+    /* mobile fine-tune */
+    @media (max-width: 640px) {
+      .app-header h1 {
+        font-size: 28px;
+        flex-wrap: wrap;
+      }
+      .policy-card {
+        padding: 22px 18px;
+      }
+      .badge-list {
+        gap: 8px;
+      }
+      .badge-list li {
+        padding: 4px 14px 4px 10px;
+        font-size: 14px;
+      }
+      .storage-update {
+        padding: 14px 16px;
+      }
+      .container {
+        padding: 0 12px;
+      }
+    }
+
+    /* bottom nav simulation – just for context */
+    .nav-mock {
+      display: none;
+    }
+
+    .app-icon {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      border-radius: 40px;
+      padding: 0 10px;
+      font-weight: 500;
+    }
+
+    /* subtle */
+    .small-meta {
+      color: #4d6b5e;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- header -->
+<div class="app-header">
+  <h1>
+    StatusGo
+    <span>status saver</span>
+  </h1>
+  <div class="sub">Privacy Policy · transparent &amp; secure</div>
+  <div class="date">📅 Effective: July 22, 2026</div>
+</div>
+
+<!-- main container -->
+<div class="container">
+  <div class="policy-card">
+
+    <!-- intro card -->
+    <div class="highlight-box">
+      ⚡ Your privacy matters. This policy explains how StatusGo handles your data — simply, safely, and without overreach.
+    </div>
+
+    <!-- ===== 1. Info we collect ===== -->
+    <h2>1. Information We Collect</h2>
+    <p><strong>StatusGo does not collect or store</strong> any personal information such as:</p>
+    <ul>
+      <li>Name, email, phone number, or passwords</li>
+      <li>Contacts, messages, or call logs</li>
+      <li>Any personally identifiable data</li>
+    </ul>
+
+    <!-- ===== 2. STORAGE ACCESS (UPDATED) ===== -->
+    <h2>2. Storage Access</h2>
+    <div class="storage-update">
+      <p style="font-weight: 500; margin-bottom: 4px;">📁 <strong>Updated storage policy</strong></p>
+      <p>StatusGo requires storage access <strong>only</strong> to:</p>
+      <ul style="margin-top: 6px;">
+        <li>Read WhatsApp Status files (images &amp; videos).</li>
+        <li>Save images and videos selected by you.</li>
+        <li>Share saved media with other apps (when you choose).</li>
+      </ul>
+      <p style="margin-top: 12px; background: #e0f0e8; padding: 8px 14px; border-radius: 40px; display: inline-block; font-size: 14px;">
+        ✅ Your files always remain on your device. We do not upload, copy, or store your files on our servers.
+      </p>
+    </div>
+
+    <!-- ===== 3. Ads ===== -->
+    <h2>3. Advertisements</h2>
+    <p>StatusGo shows ads via Google AdMob. Google may collect:</p>
+    <ul>
+      <li>Advertising ID</li>
+      <li>Device information (model, OS)</li>
+      <li>Approximate location (based on IP)</li>
+      <li>App usage &amp; interaction</li>
+    </ul>
+    <p style="margin-top: 8px;">
+      Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" style="color:#128C7E; font-weight:500;">policies.google.com/privacy</a>
+    </p>
+
+    <!-- ===== 4. Permissions ===== -->
+    <h2>4. Permissions</h2>
+    <ul>
+      <li><strong>Photos &amp; Videos</strong> (read/write status files)</li>
+      <li><strong>Storage</strong> (save &amp; share)</li>
+      <li><strong>Notification</strong> (optional, Android 13+)</li>
+    </ul>
+    <p class="small-meta">Permissions are requested only for core features and are never misused.</p>
+
+    <!-- ===== 5. Security ===== -->
+    <h2>5. Data Security</h2>
+    <ul>
+      <li>We never upload your files to our servers.</li>
+      <li>Everything stays safely on your own device.</li>
+      <li>No data is transmitted to us, ever.</li>
+    </ul>
+
+    <!-- ===== 6. Children ===== -->
+    <h2>6. Children's Privacy</h2>
+    <p>StatusGo is not intended for children under 13 years of age. We do not knowingly collect data from minors.</p>
+
+    <!-- ===== 7. Third-party ===== -->
+    <h2>7. Third-Party Services</h2>
+    <ul>
+      <li>Google Play Services</li>
+      <li>Google AdMob</li>
+    </ul>
+
+    <!-- ===== 8. Changes ===== -->
+    <h2>8. Changes</h2>
+    <p>We may update this Privacy Policy when required. Check back for the latest version.</p>
+
+    <!-- ===== 9. Contact ===== -->
+    <h2>9. Contact</h2>
+    <div class="contact-block">
+      <p><strong>Developer</strong><br>MKDevCraft</p>
+      <p><strong>Email</strong><br><a href="mailto:support@mkdevcraft.com" style="color:#0f6b47;">support@mkdevcraft.com</a></p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- disclaimer -->
+    <div class="disclaimer-box">
+      <strong>⚠️ Disclaimer</strong><br><br>
+      StatusGo is an independent application and is not affiliated with, endorsed by, or sponsored by WhatsApp LLC or Meta Platforms, Inc. WhatsApp is a trademark of WhatsApp LLC.<br><br>
+      Users are solely responsible for ensuring they have the necessary rights or permissions before saving or sharing any status content.
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+      © 2026 MKDevCraft · StatusGo &nbsp;|&nbsp; Built with privacy in mind
+    </div>
+
+  </div> <!-- policy-card -->
+</div> <!-- container -->
+
+<!-- tiny ui hint: the app uses a bottom nav like the screens, but this is a privacy page only -->
+<div style="display: none;"> <!-- hidden mock, just for reference -->
+  <div>Home · Images · Videos · Chat · Saved</div>
+</div>
+
+</body>
+</html>
